@@ -1,119 +1,507 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scuns</title>
-<link rel="stylesheet" href="style.css"></head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
 <body>
-    <section class="et-hero-tabs">
-      <h1>Скунси</h1>
-      <h3>Радісні миті у світі скунсів!</h3>
-      <div class="et-hero-tabs-container">
-        <a class="et-hero-tab" href="#kartinka">скунс (картинка)</a>
-        <a class="et-hero-tab" href="#table">тейбл оф скунс</a>
-        <a class="et-hero-tab" href="#list">ліст оф скунс</a>
-        <a class="et-hero-tab" href="#form">скунси в формах</a>
-        <span class="et-hero-tab-slider"></span>
+  <section class="et-hero-tabs">
+    <h1>Скунси</h1>
+    <h3>Радісні миті у світі скунсів!</h3>
+    <div class="et-hero-tabs-container">
+      <a class="et-hero-tab" href="#kartinka">скунс (картинка)</a>
+      <a class="et-hero-tab" href="#table">тейбл оф скунс</a>
+      <a class="et-hero-tab" href="#list">ліст оф скунс</a>
+      <a class="et-hero-tab" href="#form">скунси в формах</a>
+      <a class="et-hero-tab" href="#survey">Опитування</a>
+      <a class="et-hero-tab" href="#tests">Тести</a>
+      <span class="et-hero-tab-slider"></span>
+    </div>
+  </section>
+  <main class="et-main">
+    <section class="et-slide" id="kartinka">
+      <img src="images/scuns1.jpg">
+      <h3>скунс циркач (5 &euro;)</h3>
+    </section>
+    <section class="et-slide" id="table">
+      <table>
+        <tr>
+          <th>Поганяло</th>
+          <th>Куонтіті</th>
+          <th>Прописка</th>
+        </tr>
+        <tr>
+          <td>Свинорилий скунс</td>
+          <td>~80.000</td>
+          <td>Враждєбний запад</td>
+        </tr>
+        <tr>
+          <td>Мідаус</td>
+          <td>~40.000</td>
+          <td>Аліекспрес</td>
+        </tr>
+        <tr>
+          <td>Плямистий скунс</td>
+          <td>хз</td>
+          <td>Там холодно</td>
+        </tr>
+      </table>
+    </section>
+    <section class="et-slide list" id="list">
+      <div>
+        <ul>
+          <li>Скунс</li>
+          <li>Скунс</li>
+          <li>Скунс</li>
+        </ul>
+      </div>
+      <div>
+        <ol>
+          <li>Скунс</li>
+          <li>Скунс</li>
+          <li>Скунс</li>
+        </ol>
+        <ol start="50">
+          <li>Скунс</li>
+          <li>Скунс</li>
+          <li>Скунс</li>
+        </ol>
+      </div>
+
+      <dl>
+        <dt>Скунс</dt>
+        <dd>Скунс?</dd>
+        <dt>Скунс</dt>
+        <dd>Скунс?</dd>
+      </dl>
+    </section>
+    <section class="et-slide" id="form">
+      <form>
+        <label for="text">Текстове поле:</label><br>
+        <input type="text" id="text" name="text" placeholder="скунс"><br><br>
+
+        <label for="password">Пароль:</label><br>
+        <input type="password" id="password" name="password" placeholder="скунс"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="скунс@gmail.com"><br><br>
+
+        <label for="number">Номер:</label><br>
+        <input type="number" id="number" name="number" placeholder="+380"><br><br>
+
+        <label for="date">Дата:</label><br>
+        <input type="date" id="date" name="date"><br><br>
+
+        <label for="time">Час:</label><br>
+        <input type="time" id="time" name="time"><br><br>
+
+        <label for="file">Файл:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+
+        <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
+        <label for="checkbox">Чекбокс</label><br><br>
+
+        <input type="radio" id="radio" name="radio" value="radio">
+        <label for="radio">Радіокнопка</label><br><br>
+
+        <label for="select">Випадаючий список:</label><br>
+        <select id="select" name="select">
+          <option value="1">скунс?</option>
+          <option value="2">скунс?</option>
+          <option value="3">скунс?</option>
+          <option value="4">скунс?</option>
+        </select><br><br>
+
+        <input type="submit" value="Відправити скунса" class="submit">
+      </form>
+    </section>
+    <section class="et-slide" id="survey">
+      <div class="filters">
+        <button onclick="filter3()">Сплять менше 6 годин</button>
+        <button onclick="filter1()">Їдять банани</button>
+        <button onclick="filter2()">Офіс</button>
+      </div>
+
+      <form>
+        <div class="text-left">
+          <div class="question">
+            <label for="q0">Ваше ім'я:</label><br>
+            <textarea type="text" id="q0" name="q0"></textarea><br>
+          </div>
+          <div class="question">
+            <label for="q1">1. Який ваший улюблений фрукт?</label><br>
+            <input type="text" id="q1" name="q1"><br>
+          </div>
+          <div class="question">
+            <label for="q2">2. Скільки годин ви зазвичай спите за ніч?</label><br>
+            <input type="number" id="q2" name="q2" min="1" max="24"><br>
+          </div>
+          <div class="question">
+            <label for="q3">3. Який ваш улюблений колір?</label><br>
+            <select id="q3" name="q3">
+              <option value="red">Червоний</option>
+              <option value="blue">Синій</option>
+              <option value="green">Зелений</option>
+            </select><br>
+          </div>
+          <div class="question">
+            <label for="q4">4. Який ваш статус?</label><br>
+            <input type="radio" id="q4_student" name="q4" value="student">
+            <label for="q4_student">Студент</label><br>
+            <input type="radio" id="q4_worker" name="q4" value="worker">
+            <label for="q4_worker">Працівник</label><br>
+          </div>
+          <div class="question">
+            <label for="q5">5. Яка ваша національність?</label><br>
+            <input type="password" id="q5" name="q5"><br>
+          </div>
+          <div class="question">
+            <label for="q6">6. Чи є у вас домашні тварини?</label><br>
+            <input type="radio" id="q6_yes" name="q6" value="yes">
+            <label for="q6_yes">Так</label><br>
+            <input type="radio" id="q6_no" name="q6" value="no">
+            <label for="q6_no">Ні</label><br>
+          </div>
+          <div class="question">
+            <label for="q7">7. Як часто ви займаєтеся спортом?</label><br>
+            <input type="range" id="q7" name="q7" min="1" max="7" step="1" value="3"><br>
+          </div>
+          <div class="question">
+            <label for="q8">8. Вкажіть вашу електронну адресу:</label><br>
+            <input type="email" id="q8" name="q8"><br>
+          </div>
+          <div class="question">
+            <label for="q9">9. Оберіть ваше робоче місце:</label><br>
+            <input type="checkbox" id="q9_office" name="q9" value="office">
+            <label for="q9_office">Офіс</label><br>
+            <input type="checkbox" id="q9_home" name="q9" value="home">
+            <label for="q9_home">Дистанційно</label><br>
+          </div>
+          <div class="question">
+            <label for="q10">10. Коли ви востаннє були в університеті?</label><br>
+            <input type="date" id="q10" name="q10"><br>
+          </div>
+
+          <button type="submit" onclick="saveSurvey()">Зберегти</button>
+        </div>
+      </form>
+    </section>
+
+
+    <!-- Lab2 -->
+    <section class="et-slide" id="test-form-container">
+      <div class="text-left" id="form-container">
+        <!-- Код тестів буде згенерований джава скриптом -->
       </div>
     </section>
-    <main class="et-main">
-      <section class="et-slide" id="kartinka">
-        <img src="images/scuns1.jpg">
-        <h3>скунс циркач (5 &euro;)</h3>
-      </section>
-      <section class="et-slide" id="table">
-        <table>
-          <tr>
-            <th>Поганяло</th>
-            <th>Куонтіті</th>
-            <th>Прописка</th>
-          </tr>
-          <tr>
-            <td>Свинорилий скунс</td>
-            <td>~80.000</td>
-            <td>Враждєбний запад</td>
-          </tr>
-          <tr>
-            <td>Мідаус</td>
-            <td>~40.000</td>
-            <td>Аліекспрес</td>
-          </tr>
-          <tr>
-            <td>Плямистий скунс</td>
-            <td>хз</td>
-            <td>Там холодно</td>
-          </tr>
-        </table>
-      </section>
-      <section class="et-slide list" id="list">
-        <div>
-          <ul>
-            <li>Скунс</li>
-            <li>Скунс</li>
-            <li>Скунс</li>
-          </ul>
-        </div>
-        <div>
-          <ol>
-            <li>Скунс</li>
-            <li>Скунс</li>
-            <li>Скунс</li>
-          </ol>
-          <ol start="50">
-            <li>Скунс</li>
-            <li>Скунс</li>
-            <li>Скунс</li>
-          </ol>
-        </div>
 
-        <dl>
-          <dt>Скунс</dt>
-          <dd>Скунс?</dd>
-          <dt>Скунс</dt>
-          <dd>Скунс?</dd>
-        </dl>
-      </section>
-      <section class="et-slide" id="form">
-        <form>
-          <label for="text">Текстове поле:</label><br>
-          <input type="text" id="text" name="text" placeholder="скунс"><br><br>
-        
-          <label for="password">Пароль:</label><br>
-          <input type="password" id="password" name="password" placeholder="скунс"><br><br>
-        
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email" placeholder="скунс@gmail.com"><br><br>
-        
-          <label for="number">Номер:</label><br>
-          <input type="number" id="number" name="number" placeholder="+380"><br><br>
-        
-          <label for="date">Дата:</label><br>
-          <input type="date" id="date" name="date"><br><br>
-        
-          <label for="time">Час:</label><br>
-          <input type="time" id="time" name="time"><br><br>
-        
-          <label for="file">Файл:</label><br>
-          <input type="file" id="file" name="file"><br><br>
-        
-          <input type="checkbox" id="checkbox" name="checkbox" value="checkbox">
-          <label for="checkbox">Чекбокс</label><br><br>
-        
-          <input type="radio" id="radio" name="radio" value="radio">
-          <label for="radio">Радіокнопка</label><br><br>
-        
-          <label for="select">Випадаючий список:</label><br>
-          <select id="select" name="select">
-            <option value="1">скунс?</option>
-            <option value="2">скунс?</option>
-            <option value="3">скунс?</option>
-            <option value="4">скунс?</option>
-          </select><br><br>
-        
-          <input type="submit" value="Відправити скунса" class="submit">
-        </form>
-      </section>
-    </main>
+    <!-- Lab3 -->
+    <section class="et-slide">
+      <div class="text-left">
+        <svg viewBox="0 0 400 400" width="400" height="400">
+          <path d="M40 40 L360 40 L200 360 Z" fill="blue" stroke="black" stroke-width="8"/>
+          <line x1="200" y1="40" x2="200" y2="360" stroke="black" stroke-width="8"/>
+          <text x="200" y="30" fill="black" text-anchor="middle" font-size="30">2003</text>
+        </svg>
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
+
+<script></script>
+
+<script>
+  function saveSurvey() {
+    const q0Value = document.getElementById('q0').value;
+    const q1Value = document.getElementById('q1').value;
+    const q2Value = document.getElementById('q2').value;
+    const q3Value = document.getElementById('q3').value;
+    const q4Value = document.querySelector('input[name="q4"]:checked').value;
+    const q5Value = document.getElementById('q5').value;
+    const q6Value = document.querySelector('input[name="q6"]:checked') ? document.querySelector('input[name="q6"]:checked').value : null;
+    const q7Value = document.getElementById('q7').value;
+    const q8Value = document.getElementById('q8').value;
+
+    const checkboxes = document.querySelectorAll('input[name="q9"]:checked');
+    let q9Value = [];
+    checkboxes.forEach(checkbox => {
+      q9Value.push(checkbox.value);
+    });
+    q9Value = q9Value.join(', ');
+
+    const q10Value = document.getElementById('q10').value;
+
+    const surveyResults = {
+      q0: q0Value,
+      q1: q1Value,
+      q2: q2Value,
+      q3: q3Value,
+      q4: q4Value,
+      q5: q5Value,
+      q6: q6Value,
+      q7: q7Value,
+      q8: q8Value,
+      q9: q9Value,
+      q10: q10Value
+    };
+
+    const previousAttempts = localStorage.getItem('surveyAttempts');
+
+    let attemptsArray = [];
+
+    if (previousAttempts) {
+      attemptsArray = JSON.parse(previousAttempts);
+    }
+
+    attemptsArray.push(surveyResults);
+
+    localStorage.setItem('surveyAttempts', JSON.stringify(attemptsArray));
+
+    alert('Результати опитування збережено в LocalStorage.');
+  }
+
+  function filter1() {
+    const answersArr = JSON.parse(localStorage.getItem('surveyAttempts'));
+
+    if (!answersArr) {
+      console.log('No survey attempts found.');
+      return;
+    }
+
+    const q0Results = answersArr
+      .filter(attempt => attempt.q1 && attempt.q1.toLowerCase() === 'банан')
+      .map(attempt => attempt.q0)
+      .join(', ');
+
+
+    console.log(q0Results);
+    alert(q0Results);
+  }
+
+  function filter2() {
+    const answersArr = JSON.parse(localStorage.getItem('surveyAttempts'));
+
+    if (!answersArr) {
+      console.log('No survey attempts found.');
+      return;
+    }
+
+    const firstCheckboxValue = 'office';
+
+    const q0Results = answersArr
+      .filter(attempt => attempt.q9 && attempt.q9.includes(firstCheckboxValue))
+      .map(attempt => attempt.q0)
+      .join(', ');
+
+    alert(q0Results);
+  }
+
+  function filter3() {
+    const answersArr = JSON.parse(localStorage.getItem('surveyAttempts'));
+
+    if (!answersArr) {
+      console.log('No survey attempts found.');
+      return;
+    }
+
+    const q0Results = answersArr
+      .filter(attempt => attempt.q2 && attempt.q2 < 6)
+      .map(attempt => attempt.q0)
+      .join(', ');
+
+
+    alert(q0Results);
+  }
+
+
+
+  // Lab2
+  const testData = {
+    testName: ".NET Test",
+    questions: [
+      {
+        question: "Які виняток не можна зупинити в блоці catch?",
+        answers: [
+          {
+            answer: "StackOverflowException",
+            isCorrect: true,
+          },
+          {
+            answer: "ArgumentNullException",
+            isCorrect: false,
+          },
+          {
+            answer: "DllNotFoundException",
+            isCorrect: false,
+          },
+          {
+            answer: "NullReferenceException",
+            isCorrect: false,
+          }
+        ],
+      },
+      {
+        question: "Що таке Kestrel?",
+        answers: [
+          {
+            answer: "Kestrel - це веб-сервер, що використовується для розгортання та запуску веб-додатків на платформі .NET Core.",
+            isCorrect: true,
+          },
+          {
+            answer: "Kestrel - це фреймворк для створення ігор на мові програмування C#.",
+            isCorrect: false,
+          },
+          {
+            answer: "Kestrel - це база даних, яка використовується для зберігання конфігураційних даних в .NET Core",
+            isCorrect: true,
+          },
+          {
+            answer: "Kestrel - це редактор коду для розробки програм на мові програмування Java.",
+            isCorrect: false,
+          }
+        ],
+      },
+      {
+        question: "Що таке асинхронне програмування в .NET, і яке його призначення?",
+        answers: [
+          {
+            answer: "Асинхронне програмування - це підхід до розробки програм, в яких використовуються асинхронні операції для підвищення ефективності та масштабованості. Його призначення - забезпечення продуктивності та реагування програм на зовнішні події, такі як мережеві запити або робота з файлами.",
+            isCorrect: true,
+          },
+          {
+            answer: "Асинхронне програмування - це методологія розробки програм, яка передбачає використання виключень для обробки асинхронних подій та помилок.",
+            isCorrect: false,
+          },
+          {
+            answer: "Асинхронне програмування - це процес взаємодії програми з базою даних за допомогою асинхронних SQL запитів.",
+            isCorrect: false,
+          },
+          {
+            answer: "Асинхронне програмування - це методика розробки програм, що передбачає використання паралельних потоків для підвищення швидкодії.",
+            isCorrect: false,
+          }
+        ],
+      },
+      {
+        question: "Що таке Dependency Injection (DI) і яке його значення для .NET розробки?",
+        answers: [
+          {
+            answer: "Dependency Injection - це процес передачі залежностей в об'єкт зовнішніми засобами, зазвичай через конструктор, властивості або методи. У .NET це важливий принцип, що сприяє створенню розширюваних, тестових та зрозумілих програмних рішень.",
+            isCorrect: true,
+          },
+          {
+            answer: "Dependency Injection - це техніка розробки програм, що передбачає використання інтерфейсів для зведення залежностей до мінімуму.",
+            isCorrect: false,
+          },
+          {
+            answer: "Dependency Injection - це підхід до створення мобільних додатків на платформі Android у середовищі .NET.",
+            isCorrect: false,
+          },
+          {
+            answer: "Dependency Injection - це методологія вирішення проблем із безпекою даних у програмах на мові програмування C#.",
+            isCorrect: false,
+          }
+        ],
+      },
+      {
+        question: "Що таке аспектно-орієнтоване програмування (Aspect-Oriented Programming, AOP) і як воно використовується в .NET?",
+        answers: [
+          {
+            answer: "Аспектно-орієнтоване програмування - це методологія, яка дозволяє відокремити крос-вирішені аспекти, такі як логування, аудит, транзакції, від основної бізнес-логіки програми. В .NET воно використовується за допомогою бібліотек, таких як PostSharp або Castle Windsor, які надають можливість внедрення аспектів у виконання програми.",
+            isCorrect: true,
+          },
+          {
+            answer: "Аспектно-орієнтоване програмування - це підхід до розробки, що передбачає використання виключень для обробки крос-вирішених аспектів.",
+            isCorrect: false,
+          },
+          {
+            answer: "Аспектно-орієнтоване програмування - це методика, яка ставить за мету забезпечити взаємодію різних компонентів програми за допомогою аспектів.",
+            isCorrect: false,
+          },
+          {
+            answer: "Аспектно-орієнтоване програмування - це підхід до розробки, що базується на використанні аспектів для моделювання бізнес-процесів.",
+            isCorrect: false,
+          }
+        ],
+      }
+    ]
+  };
+
+
+  const formContainer = document.getElementById('form-container');
+
+  function buildForm(testData) {
+    const questions = testData.questions;
+
+    const form = document.createElement('form');
+    form.setAttribute('id', 'test-form');
+
+    questions.forEach((questionObj, index) => {
+      const questionElement = document.createElement('div');
+      questionElement.classList.add('question');
+      questionElement.innerHTML = `<p>${index + 1}. ${questionObj.question}</p>`;
+
+      const answers = questionObj.answers;
+      answers.forEach((answerObj, answerIndex) => {
+        const answerElement = document.createElement('div');
+        answerElement.classList.add('answer');
+        answerElement.innerHTML = `
+        <input type="radio" id="question${index}-answer${answerIndex}" name="question${index}" value="${answerObj.answer}">
+        <label for="question${index}-answer${answerIndex}">${answerObj.answer}</label>
+      `;
+        questionElement.appendChild(answerElement);
+      });
+
+      form.appendChild(questionElement);
+    });
+
+    const submitButton = document.createElement('button');
+    submitButton.setAttribute('type', 'submit');
+    submitButton.textContent = 'Submit';
+    form.appendChild(submitButton);
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      let correctAnswers = 0;
+
+      questions.forEach((questionObj, index) => {
+        const selectedAnswer = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selectedAnswer) {
+          const selectedAnswerIndex = parseInt(selectedAnswer.id.split('-')[1].replace('answer', ''));
+          if (questionObj.answers[selectedAnswerIndex].isCorrect) {
+            correctAnswers++;
+          }
+        }
+      });
+
+      const totalQuestions = questions.length;
+      const scorePercentage = (correctAnswers / totalQuestions) * 100;
+
+      const resultMessage = `Ви відповіли правильно на ${correctAnswers} з ${totalQuestions} питань (${scorePercentage}%).`;
+
+      formContainer.innerHTML = '';
+
+      const resultElement = document.createElement('div');
+      resultElement.textContent = resultMessage;
+
+      formContainer.appendChild(resultElement);
+    });
+
+    formContainer.innerHTML = '';
+
+    formContainer.appendChild(form);
+  }
+
+  buildForm(testData);
+</script>
